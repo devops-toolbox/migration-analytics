@@ -8,10 +8,10 @@ migration-analytics: Migration-analytics
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.migration-analytics](https://galaxy.ansible.com/devops-toolbox.migration-analytics)
+[https://galaxy.ansible.com/devopstoolbox.migration-analytics](https://galaxy.ansible.com/devopstoolbox.migration-analytics)
 
 ```bash
-ansible-galaxy install devops-toolbox.migration-analytics
+ansible-galaxy install devopstoolbox.migration-analytics
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: migration-analytics is configured
       import_role:
-        name: devops-toolbox.migration-analytics
+        name: devopstoolbox.migration-analytics
       vars:
         migration-analytics_packages_state: present
         migration-analytics_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
