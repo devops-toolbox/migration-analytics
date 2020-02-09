@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+migration-analytics_repos_create: "{{ _migration-analytics_repos_create['all']
+  | union ( _migration-analytics_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+migration-analytics_repos_download: "{{ _migration-analytics_repos_download['all']
+  | union ( _migration-analytics_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+migration-analytics_templates_copy: "{{ _migration-analytics_templates_copy['all']
+  | union ( _migration-analytics_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+migration-analytics_services_enable: "{{ _migration-analytics_services_enable['all']
+  | union ( _migration-analytics_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+migration-analytics_selinux_enable: "{{ _migration-analytics_selinux_enable['all']
+  | union ( _migration-analytics_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+migration-analytics_packages_remove: "{{ _migration-analytics_packages_remove['all']
+  | union ( _migration-analytics_packages_remove[my_os]
+  | default([]) ) }}"
+migration-analytics_packages_repos: "{{ _migration-analytics_packages_repos['all']
+  | union ( _migration-analytics_packages_repos[my_os]
+  | default([]) ) }}"
+migration-analytics_packages_prereq: "{{ _migration-analytics_packages_prereq['all']
+  | union ( _migration-analytics_packages_prereq[my_os]
+  | default([]) ) }}"
+migration-analytics_packages_install: "{{ _migration-analytics_packages_install['all']
+  | union ( _migration-analytics_packages_install[my_os]
+  | default([]) ) }}"

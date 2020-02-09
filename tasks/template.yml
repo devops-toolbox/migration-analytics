@@ -1,0 +1,10 @@
+---
+# Template configuration files for migration-analytics
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ migration-analytics_templates_copy }}"
+  when: migration-analytics_copy_templates

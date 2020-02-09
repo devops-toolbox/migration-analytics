@@ -1,0 +1,27 @@
+---
+# Install migration-analytics packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ migration-analytics_packages_remove }}"
+    state: absent
+  become: true
+  when: migration-analytics_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ migration-analytics_packages_repos }}"
+    state: "{{ migration-analytics_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ migration-analytics_packages_prereq }}"
+    state: "{{ migration-analytics_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ migration-analytics_packages_install }}"
+    state: "{{ migration-analytics_packages_state }}"
+  become: true
